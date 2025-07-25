@@ -45,10 +45,10 @@ public:
 		set_last_name (last_name);
 		set_first_name (first_name);
 		set_age(age);
-		cout << "HConstructoir:t" << this << endl;
+		cout << "HConstructoir:\t" << this << endl;
 	}
 	~Human() {
-		cout << "HDestructoir:t" << this << endl;
+		cout << "HDestructoir:\t" << this << endl;
 	}
 		
 	// Methods:
@@ -107,10 +107,10 @@ public:
 		set_group(group);
 		set_rating(rating);
 		set_attendance(attendance);
-		cout << "SConstructoir:t" << this << endl;
+		cout << "SConstructoir:\t" << this << endl;
 	}
 	~Student() {
-		cout << "SDestructoir:t" << this << endl;
+		cout << "SDestructoir:\t" << this << endl;
 	}
 
 	// Methods:
@@ -153,11 +153,11 @@ public:
 	{
 		set_speciality(speciality);
 		set_experience(experience);
-		cout << "TConstructoir:t" << this << endl;
+		cout << "TConstructoir:\t" << this << endl;
 	}
 	
 	~Teacher() {
-		cout << "TDestructoir:t" << this << endl;
+		cout << "TDestructoir:\t" << this << endl;
 	}
 
 	void info() const {
@@ -167,9 +167,50 @@ public:
 
 };
 
+#define GRADUATE_TAKE_PARAMETERS const std::string& subject
+#define GRADUATE_GIVE_PARAMETERS subject
+
+
+class Graduate : public Student {
+	std::string subject;
+public:
+	const std::string& get_subject()const {
+		return subject;
+	}
+	void set_subject(const std::string& subject) {
+		this->subject = subject;
+	}
+
+	// Constructors:
+
+	Graduate(HUMAN_TAKE_PARAMETERS, STUDENT_TAKE_PARAMETERS, GRADUATE_TAKE_PARAMETERS)
+		:Student(HUMAN_GIVE_PARAMETERS, STUDENT_GIVE_PARAMETERS) {
+		set_subject(subject);
+		cout << "GConstructoir:\t" << this << endl;
+
+	}
+	~Graduate() {
+		cout << "GDestructoir:\t" << this << endl;
+	}
+	
+	// Methods:
+	
+	void info() const {
+		Student::info();
+		cout << get_subject() << endl;
+	}
+
+
+};
+
+
+#define INHERITANCE
+
+
 void main() {
 	setlocale(LC_ALL, "");
 
+#ifdef INHERITANCE
 	Human human("Montana", "Antonio", 25);
 	human.info();
 
@@ -179,5 +220,8 @@ void main() {
 	Teacher teacher("White", "Walter", 50, "Chemistry", 25);
 	teacher.info();
 
+	Graduate graduate("Schreder", "Hank", 40, "Criminalistik", "OBN", 40, 50, "How to catch Heisenberg");
+	graduate.info();
+#endif // INHERITANCE
 
 }
