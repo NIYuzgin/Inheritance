@@ -108,11 +108,16 @@ public:
 	}
 
 	//			Methods:
-	void info()const override{
+	void info()const override {
 		Human::info();
 		cout << speciality << " " << group << " " << rating << " " << attendance << endl;
 	}
 };
+
+std::ostream& operator<<(std::ostream& os, const Student& obj) {
+	os << (Human&)obj;	//Upcast
+	return os << obj.get_speciality() << " " << obj.get_group() << " " << obj.get_rating() << " " << obj.get_attendance();
+}
 
 #define TEACHER_TAKES_PARAMETERS const std::string& speciality, int experiance
 #define TEACHER_GIVE_PARAMETERS speciality, experiance
@@ -153,6 +158,10 @@ public:
 	}
 };
 
+std::ostream& operator<<(std::ostream& os, const Teacher& obj) {
+	return os << (Human&)obj << " " << obj.get_speciality() << " " << obj.get_experiance();
+}
+
 #define GRADUATE_TAKES_PARAMETERS const std::string& subject
 #define GRADUATE_GIVE_PARAMETERS subject
 
@@ -182,6 +191,11 @@ public:
 		cout << get_subject() << endl;
 	}
 };
+
+std::ostream& operator<<(std::ostream& os, const Graduate& obj) {
+	return os << (Student&)obj << " " << obj.get_subject();
+}
+
 
 //#define INHERITANCE
 #define POLYMORPHISM
@@ -215,11 +229,16 @@ void main() {
 
 	for (int i = 0; i < sizeof(group) / sizeof(group[0]); i++) {
 		group[i]->info();
-		fout << *group[i] << endl;
+		cout << typeid(*group[i]).name() << endl;
+
+		if (typeid(*group[i]) == typeid(Human))fout << *group[i] << endl;
+		if (typeid(*group[i]) == typeid(Student))fout << *dynamic_cast<Student*>(group[i]) << endl;
+		if (typeid(*group[i]) == typeid(Teacher))fout << *dynamic_cast<Teacher*>(group[i]) << endl;
+		if (typeid(*group[i]) == typeid(Graduate))fout << *dynamic_cast<Graduate*>(group[i]) << endl;
 		cout << delimiter << endl;
 	}
 	fout.close();
-	system("notepad group.txt");
+	system("start notepad group.txt");
 
 	for (int i = 0; i < sizeof(group) / sizeof(group[0]); i++) {
 		delete group[i];
