@@ -51,14 +51,15 @@ public:
 
 	//				Methods:
 
-	virtual void info()const {
-		cout << last_name << " " << first_name << " " << age << endl;
+	virtual std::ostream& info(std::ostream& os)const	//Base class
+	{
+		return os << last_name << " " << first_name << " " << age;
 	}
 
 };
 
 std::ostream& operator<<(std::ostream& os, const Human& obj) {
-	return os << obj.get_last_name() << " " << obj.get_first_name() << " " << obj.get_age();
+	return obj.info(os);
 }
 
 #define STUDENT_TAKE_PARAMETERS const std::string& speciality, const std::string& group, double rating, double attendance
@@ -108,9 +109,9 @@ public:
 	}
 
 	//			Methods:
-	void info()const override{
-		Human::info();
-		cout << speciality << " " << group << " " << rating << " " << attendance << endl;
+	std::ostream& info(std::ostream& os)const override // Derived class
+	{
+		return Human::info(os) << " " << speciality << " " << group << " " << rating << " " << attendance;
 	}
 };
 
@@ -147,9 +148,8 @@ public:
 		cout << "TDestructor:\t" << this << endl;
 	}
 
-	void info()const override {
-		Human::info();
-		cout << speciality << " " << experiance << endl;
+	std::ostream& info(std::ostream& os)const override {
+		return Human::info(os) << " " << speciality << " " << experiance;
 	}
 };
 
@@ -177,9 +177,8 @@ public:
 	}
 
 	//			Methods:
-	void info()const override {
-		Student::info();
-		cout << get_subject() << endl;
+	std::ostream& info(std::ostream& os)const override {
+		return Student::info(os) << " " << get_subject();
 	}
 };
 
@@ -203,18 +202,19 @@ void main() {
 	graduate.info();
 #endif INHERITANCE
 
+#ifdef POLYMORPHISM
 	Human* group[] = {
-		new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 98),
-		new Teacher("White", "Walter", 50, "Chemistry", 25),
-		new Graduate("Schreder", "Hank", 40, "Criminalistic", "OBN", 40, 50, "How to catch Heisenberg"),
-		new Student("Vercetty", "Tommy", 30, "Theft", "Vice", 98, 99),
-		new Teacher("Diaz", "Ricardo", 50, "Weapons distribution", 20)
+new Student("Pinkman", "Jessie", 22, "Chemistry", "WW_220", 95, 98),
+new Teacher("White", "Walter", 50, "Chemistry", 25),
+new Graduate("Schreder", "Hank", 40, "Criminalistic", "OBN", 40, 50, "How to catch Heisenberg"),
+new Student("Vercetty", "Tommy", 30, "Theft", "Vice", 98, 99),
+new Teacher("Diaz", "Ricardo", 50, "Weapons distribution", 20)
 	};
 
 	std::ofstream fout("group.txt");
 
 	for (int i = 0; i < sizeof(group) / sizeof(group[0]); i++) {
-		group[i]->info();
+		group[i]->info(cout);
 		fout << *group[i] << endl;
 		cout << delimiter << endl;
 	}
@@ -225,7 +225,7 @@ void main() {
 		delete group[i];
 		cout << delimiter << endl;
 	}
-
+#endif POLYMORPHISM
 
 
 }
