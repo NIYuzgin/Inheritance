@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru" class="Theme _theme_white Theme_color_light Theme_root_light" style="font-synthesis:none"><head><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=hERAOe5CS7JIr-ilJX-X1Cskcmm1stBoFGOICfFdF7qW77zGKtB3OEJRZLMtj6TYvIzrjH3X-Fnxc_kMVNTJdalniEPP5XUcOP678f3PhT4NNdRFDzkqq80237MADg04Hk0VxWlM2IPGm45qB6gNSsHXKcWUMyfLNUBDJ0BGByGuGWVCLOr9SMeXRF67BurxtZOZRjKFZY1A6-tfZbf6RT8a8rBip7vRKr4QZWv8rEter-S4XSE2PWTg3H8UhZ1c9qmIFjloCy1gMTl3Jj3tGtNbMtgqxykbQFarZOaItzvXZFPJgqzeVQtDYWeW3AZ_s2KZ6oR6hgAFhTF-MYaAQouUdJDmWXgenxZIfJweL50" nonce="d87c1fdc0eb8dc695b2d0cab811e6740" charset="UTF-8"></script><script nonce="3cbd45cc-02dd-4256-bddc-fb041746232f">(function(){
+var getEndStack;var getStartStack;window.__scriptInfoGetters = window.__scriptInfoGetters || [];
+if (window.__scriptInfoGetters.length < 500) {window.__scriptInfoGetters.push(function() {return {
+    startStack: getStartStack ? getStartStack() : '',
+    endStack: getEndStack ? getEndStack() : '',
+    filename: 'set-ssr-data-to-req-context.ts',
+    appId: 'news-site@1.383.1',
+    appVersion: '1.383.1',
+    appName: 'news-site',
+};});} else console.error('Too many script info getters registered. Skipping registration.');
+var _params=({"ssrData":{"topicChannelCatalog":null}});
+getStartStack = function() {return new Error().stack;};
+try{!function(){var n={193:function(){}},t={};function e(o){var r=t[o];if(void 0!==r)return r.exports;var i=t[o]={exports:{}};return n[o](i,i.exports,e),i.exports}!function(){"use strict";var n=function(n){return"object"==typeof n&&null!==n},t=function(){return window},o=function(){t().zenReqContext={}},r=e(193),i=("undefined"==typeof window&&r.initReqContext,"undefined"==typeof window&&r.runWithReqContext,"undefined"==typeof window&&r.runWithoutReqContext,"undefined"==typeof window?r.getReqContext:function(){var e=t();if(e.zenReqContext||o(),!n(e.zenReqContext))throw new Error("ReqContext is not an object");return e.zenReqContext});!function(n){var t=n.ssrData,e=i();for(var o in e.ssrData||(e.ssrData={}),t)t.hasOwnProperty(o)&&(e.ssrData[o]=t[o])}(_params)}()}();;}
+finally{getEndStack = function() {return new Error().stack;};}
+
+</symbol><symbol xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="protection_656b--react"><path fill="currentColor" d="M20.982 4.505a.497.497 0 0 0-.5-.497c-2.67.018-5.93.08-7.102-2.688a.5.5 0 0 0-.46-.319h-1.843a.51.51 0 0 0-.46.319c-1.171 2.769-4.43 2.706-7.101 2.688a.497.497 0 0 0-.499.497C3.012 5.548 2.998 7.715 2.998 8c0 9.69 7.486 13.37 8.803 13.956a.46.46 0 0 0 .395 0c1.316-.586 8.803-4.265 8.803-13.956.001-.285-.013-2.452-.017-3.495M12 19.831V3h.005c1.683 2.678 4.909 2.975 6.985 3.008L19 8c0 7.489-5.062 10.806-7 11.831" /></symbol><symbol xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="exclamation_triangle_filled_bf53--react"><path fill="currentColor" d="M19.41 9.074C18.25 6.942 15.22 2 11.998 2c-3.22 0-6.26 4.942-7.412 7.074-1.71 3.151-3.46 7.414-2.1 9.874C3.886 21.47 8.438 22 11.998 22c3.571 0 8.122-.53 9.521-3.062 1.351-2.45-.399-6.713-2.109-9.864M11.067 7h1.86c.31 0 .54.27.5.57l-.67 5c-.04.24-.25.43-.5.43h-.52a.51.51 0 0 1-.5-.43l-.67-5c-.04-.3.2-.57.5-.57m.93 11c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5" /></symbol></svg></div><script nonce="3cbd45cc-02dd-4256-bddc-fb041746232f">(function(){
+var getEndStack;var getStartStack;window.__scriptInfoGetters = window.__scriptInfoGetters || [];
+if (window.__scriptInfoGetters.length < 500) {window.__scriptInfoGetters.push(function() {return {
+    startStack: getStartStack ? getStartStack() : '',
+    endStack: getEndStack ? getEndStack() : '',
+    filename: 'data-to-namespace.side-effect.ts',
+    appId: 'dzen-layout@1.94.0',
+    appVersion: '1.94.0',
+    appName: 'dzen-layout',
+{
+    startStack: getStartStack ? getStartStack() : '',
+    endStack: getEndStack ? getEndStack() : '',
+    filename: 'inserting-metrika.ts',
+    appId: 'news-site@1.383.1',
+    appVersion: '1.383.1',
+    appName: 'news-site',
+};});} else console.error('Too many script info getters registered. Skipping registration.');
+var _params=({"counter":{"id":722818,"options":{"clickmap":true,"accurateTrackBounce":true,"trackLinks":true,"params":{"aab":0,"neo":1,"auth":1,"platform":"desktop","page":"story","isYandex":0,"settingsTheme":"light","uid":"502783565","device_id":""},"experiments":"","yaDisableGDPR":false,"webvisor":true}}});
+getStartStack = function() {return new Error().stack;};
+try{!function(){"use strict";var e,r,t,n=["utm_source","utm_medium","utm_campaign","utm_content","utm_term","_openstat"],a=/^m.dzen/,o=/\b(m\.)?(dzen\.ru\/)/g,m=/(m\.)?(dzen\.ru)$/g,c={clickmap:!1,defer:!1,trackLinks:!1,trackHash:!1},i={};!function(e){e.callbacks1="yandex_metrika_callbacks",e.callbacks2="yandex_metrika_callbacks2"}(e||(e={})),function(e){e.main="main",e.common="common",e.custom="customPublisher"}(r||(r={})),function(e){e[e.editor=45081660]="editor",e[e.common=51446871]="common",e[e.platform=44812261]="platform",e[e.mobileForYandex=88704546]="mobileForYandex",e[e.desktopForYandex=88704539]="desktopForYandex",e[e.commonNews=90354320]="commonNews",e[e.serviceNews=722818]="serviceNews",e[e.zenlibPubArticle=50377519]="zenlibPubArticle",e[e.pageViewAnd404=30968541]="pageViewAnd404",e[e.ok=97941690]="ok",e[e.sportsdzen=98581710]="sportsdzen"}(t||(t={}));!function(e){var r,t,s,u,d,l,f=e.counter,p=window;p.ym||(r=window,t=document,s="script",r[u="ym"]=r[u]||function(){(r[u].a=r[u].a||[]).push(arguments)},r[u].l=1*new Date,d=t.createElement(s),l=t.getElementsByTagName(s)[0],d.async=1,d.src="https://mc.yandex.ru/metrika/tag.js",l.parentNode.insertBefore(d,l));var k=f.id,b=f.options,w=f.shouldHit,_=f.visitParams;if(p.ym(k,"init",Object.assign(c,b,i)),w){var h=function(){var e=window,r="_zenOmittedQueryParams"in e?e._zenOmittedQueryParams.utm_referrer:void 0;return{referer:document.referrer&&!o.test(document.referrer)&&r&&m.test(r)?document.referrer:r?decodeURIComponent(r):document.referrer}}(),y=function(e){var r="https://"+e.host.replace(a,"dzen"),t=n.reduce((function(r,t){var n=new RegExp("\\b"+t+"=([^&#]+)"),a=e.href.indexOf("?"),o=(-1===a?"":e.href.slice(a)).match(n);return o?r+"&"+o[0]:r}),"?");return""+r+e.pathname+t}(location);p.ym(k,"hit",y,h),_&&p.ym(k,"params",_)}}(_params)}();;}
+finally{getEndStack = function() {return new Error().stack;};}
+})();</script><noscript><div><img src="https://mc.yandex.ru/watch/722818" style="position:fixed;left:-9999px;top:-9999px" alt=""/></div></noscript><script nonce="3cbd45cc-02dd-4256-bddc-fb041746232f">(function(){
+var getEndStack;var getStartStack;window.__scriptInfoGetters = window.__scriptInfoGetters || [];
+if (window.__scriptInfoGetters.length < 500) {window.__scriptInfoGetters.push(function() {return {
+    startStack: getStartStack ? getStartStack() : '',
+    endStack: getEndStack ? getEndStack() : '',
+    filename: 'inserting-metrika.ts',
+    appId: 'news-site@1.383.1',
+    appVersion: '1.383.1',
