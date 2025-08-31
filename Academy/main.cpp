@@ -397,6 +397,7 @@ new Teacher("Diaz", "Ricardo", 50, "Weapons distribution", 20)
 	int n = 0;
 	Human** group = Load("group.txt", n);
 	Print(group, n);
+	Save(group,n, "group2.txt");
 	Clear(group, n);
 }
 
