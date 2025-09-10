@@ -88,7 +88,11 @@ namespace Geometry {
 		virtual double get_area()const = 0;
 		virtual double get_perimeter()const = 0;
 		
-		virtual void draw()const {
+		virtual void draw()const = 0;
+		virtual void draw(int width, int height,  BOOL (__stdcall *DrawFunction)(HDC, int, int, int, int))const
+		{
+			// __stdcall - Calling convention (Конвенция вызова функции)
+
 			//1)	получаем окно консоли:
 
 			HWND hwnd = GetConsoleWindow();
@@ -107,7 +111,7 @@ namespace Geometry {
 			SelectObject(hdc, hBrush);
 
 			// 5) После того, как все необходимые инструменты созданы и выбраны, можно рисовать:
-			::DrawFunction(hdc, start_x, start_y, start_x + width, start_y + height);
+			(*DrawFunction)(hdc, start_x, start_y, start_x + width, start_y + height);
 
 			// 6) hdc, hPen, hBrush занимают ресурсы, а ресурсы нужно освобождать
 			DeleteObject(hBrush);
@@ -192,30 +196,8 @@ namespace Geometry {
 		}
 		void draw()const override {
 			
-			//1)	получаем окно консоли:
-			
-			HWND hwnd = GetConsoleWindow();
-			
-			//2)	получаем контекст устройства (DC - Device Context) для окна консоли:
-			HDC hdc = GetDC(hwnd);	// DC - это то, на чем мы будем рисовать
+			Shape::draw(width, height, ::Rectangle);
 
-
-
-			// 3)	Создадим инструменты, которыми мы будем рисовать:
-			HPEN hPen = CreatePen(PS_SOLID, 5, color);	// Карандаш (Pen) рисует контур фигуры.
-			HBRUSH hBrush = CreateSolidBrush(color);	// Кисть (Brush) рисует заливку фигуры.
-
-			// 4) Выберем созданные инструменты:
-			SelectObject(hdc, hPen);
-			SelectObject(hdc, hBrush);
-
-			// 5) После того, как все необходимые инструменты созданы и выбраны, можно рисовать:
-			::Rectangle(hdc, start_x, start_y, start_x + width, start_y + height);
-
-			// 6) hdc, hPen, hBrush занимают ресурсы, а ресурсы нужно освобождать
-			DeleteObject(hBrush);
-			DeleteObject(hPen);
-			ReleaseDC(hwnd, hdc);
 		}
 		void info()const override {
 			cout << typeid(*this).name() << endl;
@@ -254,19 +236,9 @@ namespace Geometry {
 			return M_PI * get_diameter();
 		}
 		void draw()const override {
-			HWND hwnd = GetConsoleWindow();
-			HDC hdc = GetDC(hwnd);
-			HPEN hPen = CreatePen(PS_SOLID, line_width, color);
-			HBRUSH hBrush = CreateSolidBrush(color);
-			
-			SelectObject(hdc, hPen);
-			SelectObject(hdc, hBrush);
-			
-			::Ellipse(hdc, start_x, start_y, start_x + get_diameter(), start_y + get_diameter());
 
-			DeleteObject(hBrush);
-			DeleteObject(hPen);
-			ReleaseDC(hwnd, hdc);
+			Shape::draw(get_diameter(), get_diameter(), ::Ellipse);
+
 		}
 	};
 
